@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Spotify Playlist Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <!-- Cabeçalho principal com título e descrição do dashboard -->
+      <div class="topbar-copy">
+        <p class="eyebrow">Dashboard de Playlists</p>
+        <h1>Meu Spotify Playlist Tracker</h1>
+        <p>Acompanhe suas playlists reais do Spotify, veja a duração total e reorganize no modo personalizado.</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="connectButton" class="primary-button">Conectar Spotify</button>
+        <div class="login-options">
+          <button id="loginEmailButton" class="small-button">Entrar por email</button>
+          <button id="loginPhoneButton" class="small-button">Entrar por celular</button>
+          <button id="loginQrButton" class="small-button">Entrar por QR Code</button>
+        </div>
+        <label for="sortSelect">Ordenar por</label>
+        <select id="sortSelect" disabled>
+          <option value="alphabetical">Ordem Alfabética</option>
+          <option value="recent">Recentes</option>
+          <option value="custom">Personalizado</option>
+        </select>
+      </div>
+    </header>
+
+    <div id="loginPanel" class="login-panel">
+      <p>Escolha uma forma prática de login: email, celular ou QR Code. Isso abrirá a tela de autenticação do Spotify.</p>
+      <div id="qrPanel" class="qr-panel hidden">
+        <p>Escaneie o código QR para acessar com sua conta Spotify:</p>
+        <img id="loginQrImage" alt="QR Code para login Spotify" />
+      </div>
+      <div id="loginActionInfo" class="login-action-info hidden">
+        <p>Se não abrir automaticamente, use este link:</p>
+        <a id="loginDirectLink" href="#" target="_blank" rel="noopener noreferrer">Abrir Spotify</a>
+      </div>
+    </div>
+
+    <div id="statusMessage" class="status-message">Conecte sua conta Spotify para carregar dados reais.</div>
+
+    <section id="statsSection" class="stats-grid" aria-label="Estatísticas gerais">
+      <article class="stat-card">
+        <h2 id="totalMinutes">0 min</h2>
+        <p>Duração total de música</p>
+      </article>
+      <article class="stat-card">
+        <h2>Top 5 Artistas</h2>
+        <ol id="topArtists"></ol>
+      </article>
+      <article class="stat-card">
+        <h2>Top 5 Músicas</h2>
+        <ol id="topSongs"></ol>
+      </article>
+      <article class="stat-card">
+        <h2>Top 5 Álbuns</h2>
+        <ol id="topAlbums"></ol>
+      </article>
+    </section>
+
+    <section id="playlistSection" class="playlist-section">
+      <div class="section-header">
+        <h2>Playlists</h2>
+        <p>Visualize suas playlists do Spotify e use o modo personalizado para reordenar.</p>
+      </div>
+      <div id="customHint" class="custom-note hidden">Modo Personalizado ativo: arraste playlists ou use os botões para mudar a ordem e salvar localmente.</div>
+      <div id="playlistContainer" class="playlist-grid"></div>
+    </section>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

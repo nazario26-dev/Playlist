@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Spotify</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-copy">
+        <p class="eyebrow">Login Spotify</p>
+        <h1>Conecte sua conta</h1>
+        <p>Escolha o método mais prático para entrar no Spotify: email, celular ou QR Code.</p>
+      </div>
+    </header>
+
+    <div class="login-panel">
+      <!-- Opções de login disponíveis: email, celular ou QR Code -->
+      <div class="login-options">
+        <button id="loginEmailButton" class="primary-button">Entrar por email</button>
+        <button id="loginPhoneButton" class="small-button">Entrar por celular</button>
+        <button id="loginQrButton" class="small-button">Entrar por QR Code</button>
+      </div>
+
+      <div id="qrPanel" class="qr-panel hidden">
+        <p>Escaneie o código QR abaixo com o app Spotify para entrar:</p>
+        <img id="loginQrImage" alt="QR Code para login Spotify" />
+      </div>
+
+      <div id="loginActionInfo" class="login-action-info hidden">
+        <p>Se não abrir automaticamente, use este link:</p>
+        <a id="loginDirectLink" href="#" target="_self" rel="noopener noreferrer">Abrir Spotify</a>
+      </div>
+    </div>
+
+    <div class="status-message" id="statusMessage"></div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
